@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext
 public class SwimJavaConfigDemoApp {
 
 	public static void main(String[] args) {
-
+		//dsfg
 		// read spring config java class
 		AnnotationConfigApplicationContext context =
 				new AnnotationConfigApplicationContext(SportConfig.class);
