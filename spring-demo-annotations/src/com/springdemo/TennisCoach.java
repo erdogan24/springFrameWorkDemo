@@ -1,9 +1,8 @@
 package com.springdemo;
 
-
-
 public class TennisCoach implements Coach {
 
+	@Qualifier("randomFortuneService")
 	private FortuneService fortuneService;
 	
 	// define a default constructor
@@ -11,13 +10,23 @@ public class TennisCoach implements Coach {
 		System.out.println(">>TennisCoach inside default constructor");
 	 }
 	
-	// define a setter method
+	// define my init method
+	@PostConstruct
+	public void doMyStartupStuff() {
+		System.out.println(">> TennisCoach : inside of doMyStartupStuff");
+	}
 	
-	
-	public void setFortuneService(FortuneService theFortuneService) {
-		System.out.println(">>TennisCoach inside setFortuneService() method");
+	// define my destroy method
+	@PreDestroy
+	public void doMyCleanupStuff()	{
+		System.out.println(">> TennisCoach inside  of doMyCleanupStuff()");
+	}
+	/*
+	public void doSomeCrazySruff(FortuneService theFortuneService) {
+		System.out.println(">>TennisCoach inside doSomeCrazySruff() method");
 		fortuneService = theFortuneService;
 	}
+	*/
 	/*
 	public TennisCoach(FortuneService theFortuneService) {
 	fortuneService = theFortuneService;	
